@@ -1,0 +1,22 @@
+piVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx-replicas
+  labels:
+    app: nginx-repl
+spec:
+  replicas: 3  # modify replicas according to your case
+  selector:
+    matchLabels:
+      app: nginx-repl
+  template:
+    metadata:
+      labels:
+        app: nginx-repl
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.14.2
+          ports:
+            - containerPort: 80
+
