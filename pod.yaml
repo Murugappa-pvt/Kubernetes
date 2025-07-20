@@ -1,0 +1,11 @@
+piVersion: v1
+kind: Pod
+metadata:
+  name: pod1
+  labels:
+    env: prod
+spec:
+  containers:
+    - name: myfirstcontainer
+      image: nginx:1.23
+
